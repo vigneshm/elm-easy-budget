@@ -3,8 +3,8 @@ module Views.Table exposing (view)
 import Date.Extra as DateE
 import Html exposing (Html, text, div, img)
 import Material.Table as Table
-import Model exposing (ExpenseItem)
 import Msg exposing (Msg)
+import Types exposing (ExpenseItem)
 
 
 itemView : ExpenseItem -> Html Msg

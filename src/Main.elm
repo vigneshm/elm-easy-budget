@@ -3,8 +3,9 @@ module Main exposing (..)
 import Date
 import Html exposing (programWithFlags)
 import Material
-import Model exposing (ExpenseItem, ExpenseType(Debit), Model)
+import Model exposing (Model)
 import Msg exposing (Msg, update)
+import Types exposing (ExpenseItem, ExpenseType(Debit))
 import Views.Root exposing (view)
 
 
