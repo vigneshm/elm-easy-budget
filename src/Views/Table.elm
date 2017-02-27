@@ -9,13 +9,16 @@ import Msg exposing (Msg)
 import FormatNumber
 import FormatNumber.Locales
 
+
 formatCurrency : Float -> String
 formatCurrency =
-  FormatNumber.format FormatNumber.Locales.usLocale
+    FormatNumber.format FormatNumber.Locales.usLocale
+
 
 formatDate : Date -> String
 formatDate =
-  DateE.toFormattedString "M/d/y h:mm a"
+    DateE.toFormattedString "M/d/y h:mm a"
+
 
 itemView : ExpenseItem -> Html Msg
 itemView item =
@@ -24,7 +27,8 @@ itemView item =
         , Table.td [] [ text <| formatDate item.date ]
         , Table.td [] [ text item.description ]
         , Table.td [] [ text item.category ]
-        , Table.td [ Table.numeric ] [ text <| formatCurrency item.amount ] ]
+        , Table.td [ Table.numeric ] [ text <| formatCurrency item.amount ]
+        ]
 
 
 view : List ExpenseItem -> Html Msg
