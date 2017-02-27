@@ -2,6 +2,7 @@ module Main exposing (..)
 
 import Date
 import Html exposing (programWithFlags)
+import Material
 import Model exposing (ExpenseItem, ExpenseType(Debit), Model)
 import Msg exposing (Msg, update)
 import Views.Root exposing (view)
@@ -26,14 +27,10 @@ init path =
               , source = "Credit Card 2"
               }
             ]
+      , mdl = Material.model
       }
-    , Cmd.none
+    , Material.init Msg.Mdl
     )
-
-
-subscriptions : Model -> Sub Msg
-subscriptions model =
-    Sub.none
 
 
 main : Program String Model Msg
@@ -42,5 +39,5 @@ main =
         { view = view
         , init = init
         , update = update
-        , subscriptions = subscriptions
+        , subscriptions = Material.subscriptions Msg.Mdl
         }

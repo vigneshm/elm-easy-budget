@@ -10,3 +10,10 @@ img {
   margin: 20px 0;
   max-width: 200px;
 }
+
+.main {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+  width: 100%;
+}

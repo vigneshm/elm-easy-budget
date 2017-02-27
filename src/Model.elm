@@ -6,6 +6,7 @@ module Model
         )
 
 import Date exposing (Date)
+import Material
 
 
 type ExpenseType
@@ -26,4 +27,5 @@ type alias ExpenseItem =
 type alias Model =
     { currency : String
     , expenses : List ExpenseItem
+    , mdl : Material.Model
     }
