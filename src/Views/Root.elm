@@ -1,13 +1,11 @@
 module Views.Root exposing (view)
 
-import Date
 import Html exposing (Html, text, div, img)
 import Html.Attributes exposing (class)
-import Material.Button as Button
 import Material.Layout as Layout
-import Material.Options as Options
 import Model exposing (Model, ExpenseType(Debit))
 import Msg exposing (..)
+import Views.ExpenseForm
 import Views.Table
 
 
@@ -24,30 +22,9 @@ body model =
         [ class "main" ]
         [ div [ class "content" ]
             [ Views.Table.view model.expenses
-            , newExpense model
+            , Views.ExpenseForm.view model
             ]
         ]
-
-
-newExpense : Model -> Html Msg
-newExpense model =
-    Button.render Mdl
-        [ 0 ]
-        model.mdl
-        [ Button.raised
-        , Button.colored
-        , Options.onClick
-            (AddNewExpense
-                { amount = 23
-                , category = "Spending money"
-                , date = Date.fromTime 1488129743964
-                , description = "New stuff"
-                , expenseType = Debit
-                , source = "Wallet"
-                }
-            )
-        ]
-        [ text "New Expense" ]
 
 
 view : Model -> Html Msg

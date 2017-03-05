@@ -28,6 +28,12 @@ init path =
               }
             ]
       , mdl = Material.model
+      , ui =
+            { expenseForm =
+                { amountInput = ""
+                , amountValue = 0.0
+                }
+            }
       }
     , Material.init Msg.Mdl
     )
