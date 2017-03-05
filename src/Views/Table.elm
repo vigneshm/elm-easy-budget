@@ -2,12 +2,12 @@ module Views.Table exposing (view)
 
 import Date exposing (Date)
 import Date.Extra as DateE
-import Html exposing (Html, text, div, img)
-import Material.Table as Table
-import Model exposing (ExpenseItem)
-import Msg exposing (Msg)
 import FormatNumber
 import FormatNumber.Locales
+import Html exposing (Html, text, div, img)
+import Material.Table as Table
+import Msg exposing (Msg)
+import Types exposing (ExpenseItem)
 
 
 formatCurrency : Float -> String

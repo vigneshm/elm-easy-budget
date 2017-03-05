@@ -1,27 +1,7 @@
-module Model
-    exposing
-        ( ExpenseItem
-        , ExpenseType(Credit, Debit)
-        , Model
-        )
+module Model exposing (Model)
 
-import Date exposing (Date)
 import Material
-
-
-type ExpenseType
-    = Credit
-    | Debit
-
-
-type alias ExpenseItem =
-    { amount : Float
-    , category : String
-    , date : Date
-    , description : String
-    , expenseType : ExpenseType
-    , source : String
-    }
+import Types exposing (..)
 
 
 type alias Model =
