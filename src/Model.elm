@@ -1,9 +1,4 @@
-module Model
-    exposing
-        ( ExpenseItem
-        , ExpenseType(Credit, Debit)
-        , Model
-        )
+module Model exposing (..)
 
 import Date exposing (Date)
 import Material
@@ -24,8 +19,20 @@ type alias ExpenseItem =
     }
 
 
+type alias ExpenseForm =
+    { amountInput : String
+    , amountValue : Float
+    }
+
+
+type alias UI =
+    { expenseForm : ExpenseForm
+    }
+
+
 type alias Model =
     { currency : String
     , expenses : List ExpenseItem
+    , ui : UI
     , mdl : Material.Model
     }
